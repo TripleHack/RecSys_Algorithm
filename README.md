@@ -1,2 +1,2 @@
-# Collaborative-Filtering
-RecSys_Collaborative Filtering
+# RecSys_Algorithm
+Collaborative Filtering
