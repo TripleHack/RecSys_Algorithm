@@ -1,0 +1,1 @@
+260	item:1876_score:0.443;item:2804_score:0.44;item:2826_score:0.43;item:3481_score:0.417;item:3476_score:0.408;item:266_score:0.405;item:3467_score:0.405;item:3471_score:0.398;item:2810_score:0.388;item:3489_score:0.382
