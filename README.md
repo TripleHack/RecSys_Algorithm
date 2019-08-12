@@ -2,7 +2,7 @@
 
 信息过载，用户实际需求不明确；强依赖于用户行为。  
 
-### Collaborative Filtering
+### 1.Collaborative Filtering
 #### item CF
 
 给用户推荐他之前喜欢物品相似的物品  
