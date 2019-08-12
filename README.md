@@ -44,3 +44,10 @@ $$p_{ui} = \sum_{v\in s(u,k) \cap u(i)} {s_{uv} * r_{vi}}$$
   
 公式升级2：不同用户对同一item行为的时间段不同应给予时间惩罚  
 <div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/RecSys公式/2.1.6.png" width="300" height="260" /></div>  
+  
+user cf，是基于用户相似度矩阵来推荐，因此user本身的行为并不会造成自己的推荐结果发生改变；对于item cf来说，产生了新的行为，推荐结果则会立刻发生改变  
+user cf，新用户需要等用户有了一定的行为，并得到与其他用户的相似度矩阵之后才可以推荐，但是新物品在被点击之后，则可以推荐给相似用户；对于item cf，新用户一旦完成了点击，便可以推荐相似物品，但是因为新物品还没有进入物品相似度矩阵的计算，因此无法进行新物品的推荐  
+user cf，推荐结果略难以解释；item cf的推荐理由有较好的可解释性  
+  
+user cf不适用于user非常多的场景，item cf适用于item远小于user的场景，实战中更倾向于item cf  
+user cf适用于物品需要及时下发，且个性化领域不太强的推荐，item cf适用于长尾物品丰富，且个性化需求强烈的场景，由于真实场景中会有一些召回算法解决新物品下发问题，从个性化层面考虑也更倾向于item cf  
