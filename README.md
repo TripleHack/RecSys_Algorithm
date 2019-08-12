@@ -12,4 +12,4 @@ $u(i)$表示对item i有行为的用户集合
 $u(j)$表示对item j有行为的用户集合
 分子部分表示user的重合程度，分母则是做了归一化
 
-$$s_ij = \frac {u(i)\cap u(j)}{\sqrt{u(i)\cap u(j)}}}$$
+$$s_ij = {u(i)\cap u(j)}$$
