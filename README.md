@@ -14,4 +14,4 @@ $u(j)$表示对item j有行为的用户集合
 
 $$s_{ij} = \frac {u(i)\cap u(j)} {\sqrt{|u(i)|\cup |u(j)|}}$$  
 
-$$p_{uj} = {s_{ij} * r_{ui}}$$ 
+$$p_{uj} = \sum_{i\in N(u) \cap s(j,k)} {s_{ij} * r_{ui}}$$ 
