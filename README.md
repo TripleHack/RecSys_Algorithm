@@ -27,3 +27,10 @@ i 是 user u行为过的物品，并且取与item i最相似的k个item
 
 #### user CF
 给用户推荐相似兴趣用户感兴趣的物品  
+如何评价相似兴趣用户集合  
+找到集合用户感兴趣的而目标用户没行为过的item  
+$$s_{uv} = \frac {N(u)\cap N(v)} {\sqrt{|N(u)|\cup |N(v)|}}$$  
+$N(u)$表示用户u有过行为的item集合  
+$N(v)$表示用户v有过行为的item集合  
+分子部分是item的重合程度  
+$$p_{ui} = \sum_{v\in s(u,k) \cap u(i)} {s_{uv} * r_{vi}}$$  
