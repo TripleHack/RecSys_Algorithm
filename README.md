@@ -21,7 +21,7 @@ $s_{ij}$表示物品的相似度
 i 是 user u行为过的物品，并且取与item i最相似的k个item  
 公式升级1：活跃用户应该被降低在相似度公式中的贡献度  
 例如：某个电商系统，user a是批发商，买了很多物品，比如啤酒和书刊，但是不能反映他的兴趣，user b是普通用户，只买了啤酒和书刊，这可以反映他的兴趣。按照之前的公式，a与b的贡献度是一样的，我们需要降低user a的贡献度。  
-<div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/RecSys%E5%85%AC%E5%BC%8F/2.1.3.png)" width="300" height="150" /></div>  
+<div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/RecSys公式/2.1.3.png)" width="300" height="150" /></div>  
 公式升级2：用户在不同时间对item的操作应给予时间衰减惩罚  
 公式2.1.4  
 
