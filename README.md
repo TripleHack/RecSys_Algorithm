@@ -38,4 +38,4 @@ $$p_{ui} = \sum_{v\in s(u,k) \cap u(i)} {s_{uv} * r_{vi}}$$
 例如：电商系统中，user a与user b都购买了新华词典这本书，user a与user c都购买了机器学习，并且他们都只有这一本书重合，这时a与b，a与c重合度都是1，显然是不合理的，因为购买新华字典不能反映真实的兴趣，而机器学习大概率可以反应，因为这本书的购书群体较窄。  
 <div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/RecSys公式/2.1.5.png" width="300" height="120" /></div>  
 公式升级2：不同用户对同一item行为的时间段不同应给予时间惩罚  
-<div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/RecSys公式/2.1.6.png" width="300" height="230" /></div>  
+<div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/RecSys公式/2.1.6.png" width="300" height="260" /></div>  
