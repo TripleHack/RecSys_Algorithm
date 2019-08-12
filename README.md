@@ -2,8 +2,8 @@
 
 信息过载，用户实际需求不明确；强依赖于用户行为。  
 
-#### Collaborative Filtering
-##### item CF
+### Collaborative Filtering
+#### item CF
 
 给用户推荐他之前喜欢物品相似的物品  
 电商场景下更看重实际转化  
@@ -25,5 +25,5 @@ i 是 user u行为过的物品，并且取与item i最相似的k个item
 公式升级2：用户在不同时间对item的操作应给予时间衰减惩罚  
 公式2.1.4  
 
-##### user CF
+#### user CF
 给用户推荐相似兴趣用户感兴趣的物品  
