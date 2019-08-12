@@ -8,3 +8,4 @@
 #### Collaborative Filtering
 ##### item CF
 $u(i)$表示用户i行为集合
+$x^{y^z}=(1+e^x)^{-2xy^w}$
