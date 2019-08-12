@@ -7,5 +7,9 @@
 
 #### Collaborative Filtering
 ##### item CF
-$u(i)$表示用户i行为集合
-$x^{y^z}=(1+e^x)^{-2xy^w}$
+
+u(i)表示对item i有行为的用户集合
+u(j)表示对item j有行为的用户集合
+分子部分表示user的重合程度，分母则是做了归一化
+
+$$\sum_{i=0}^N{X_i}$$
