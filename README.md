@@ -53,6 +53,7 @@ user cf不适用于user非常多的场景，item cf适用于item远小于user的
 user cf适用于物品需要及时下发，且个性化领域不太强的推荐，item cf适用于长尾物品丰富，且个性化需求强烈的场景，由于真实场景中会有一些召回算法解决新物品下发问题，从个性化层面考虑也更倾向于item cf  
   
 ## 2.Latent Factor Model  
+<div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/formula/3.1.png"/></div>  
 隐特征个数F(10-32)，正则化参数α(0.01-0.05)，learning rate β(0.01-0.05)  
 LFM是传统的监督学习方法，根据样本的label设定损失函数，利用最优化方法使损失函数最小化，特征为隐特征，不是那么直观  
 CF是利用公式建模，缺少学习的过程，理论完备性弱于LFM  
