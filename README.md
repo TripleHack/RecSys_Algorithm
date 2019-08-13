@@ -53,9 +53,9 @@ user cf不适用于user非常多的场景，item cf适用于item远小于user的
 user cf适用于物品需要及时下发，且个性化领域不太强的推荐，item cf适用于长尾物品丰富，且个性化需求强烈的场景，由于真实场景中会有一些召回算法解决新物品下发问题，从个性化层面考虑也更倾向于item cf  
   
 ## 2.Latent Factor Model  
-<div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/formula/3.1.png"/></div>  
-<div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/formula/3.2.png"/></div>  
-<div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/formula/3.3.png"/></div>  
+<div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/formula/2.1.png"/></div>  
+<div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/formula/2.2.png"/></div>  
+<div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/formula/2.3.png"/></div>  
 隐特征个数F(10-32)，正则化参数α(0.01-0.05)，learning rate β(0.01-0.05)  
 LFM是传统的监督学习方法，根据样本的label设定损失函数，利用最优化方法使损失函数最小化，特征为隐特征，不是那么直观  
 CF是利用公式建模，缺少学习的过程，理论完备性弱于LFM  
@@ -63,4 +63,15 @@ item CF需要的空间为item^2
 LFM只需要存储item向量和user向量，LFM需要的空间更少  
 LFM需要迭代，耗时略高于CF，但是是同一量级  
 item CF可以将矩阵写入内存或redis，可以较好响应用户行为  
-LFM，如果将向量写入内存或redis，但是就不能对用户行为及时感知 
+LFM，如果将向量写入内存或redis，但是就不能对用户行为及时感知  
+  
+## 3.Personal Rank  
+用户行为很容易表示为图  
+图推荐在个性化推荐领域效果显著  
+对user A进行个性化推荐，从user A结点开始在用户物品二分图random walk，以alpha概率从A的出边中等概率选择一条游走过去，到达该顶点后，有alpha的概率继续从a的出边中等概率选择一条继续游走到下一个结点，或者1-alpha的概率回到A，多次迭代，直至各顶点对于用户A的重要度收敛  
+<div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/formula/3.1.png"/></div>  
+求item对固定user的PR值，每次迭代需要在全图迭代，实际工业界中是不能接受的，因此提出矩阵化方法  
+<div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/formula/3.2.png"/></div>  
+r是m+n行，1列的矩阵，表示其余顶点对该顶点的PR值  
+r_0是m + n行，1列的矩阵，它负责选取某一结点为固定结点，该行为1，其余行全为0  
+M矩阵是m + n行，m + n列，即转移矩阵  
