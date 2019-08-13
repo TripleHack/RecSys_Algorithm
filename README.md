@@ -75,3 +75,12 @@ LFM，如果将向量写入内存或redis，但是就不能对用户行为及时
 r是m+n行，1列的矩阵，表示其余顶点对该顶点的PR值  
 r_0是m + n行，1列的矩阵，它负责选取某一结点为固定结点，该行为1，其余行全为0  
 M矩阵是m + n行，m + n列，即转移矩阵  
+  
+## 4.item2vec  
+item2item的推荐方式效果显著  
+NN model的特征抽象能力强  
+算法论文:ITEM2VEC:NEURAL ITEM EMBEDDING FOR COLLABORATIVE FILTERING  
+将用户行为序列转化成item组成的句子  
+模仿word2vec训练word embedding将item embedding  
+但是，用户行为序列时序性缺失，用户行为序列中的item强度是无区分性的  
+算法主流程：从log中抽取用户行为序列；将行为序列当成语料训练word2vec得到item embedding；得到item sim关系用于推荐
