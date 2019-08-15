@@ -93,8 +93,8 @@ X_w是上下文词向量加和，θ是投影层与输出的词为u时，他们�
 <div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/formula/4.5.png"/></div>  
 <div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/formula/4.6.png"/></div>  
 训练主流程：
-选取中心词w以及负采样出NEG(w)
-分别获得损失函数对于X_w与θ的梯度  
-更新θ以及中心词对应的context(w)的每一个词的词向量  
+选取中心词w以及负采样出NEG(w)；  
+分别获得损失函数对于X_w与θ的梯度；  
+更新θ以及中心词对应的context(w)的每一个词的词向量。  
 ### Skip Gram  
 <div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/formula/4.3.png"/></div>  
