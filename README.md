@@ -93,10 +93,26 @@ X_w是上下文词向量加和，θ是投影层与输出的词为u时，他们�
 <div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/formula/4.4.png"/></div>  
 <div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/formula/4.5.png"/></div>  
 <div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/formula/4.6.png"/></div>  
-训练主流程：
+训练主流程：  
 选取中心词w以及负采样出NEG(w)；  
 分别获得损失函数对于X_w与θ的梯度；  
 更新θ以及中心词对应的context(w)的每一个词的词向量。  
 
 ### Skip Gram  
 <div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/formula/4.3.png"/></div>  
+已知中间词，最大化相邻词概率  
+<div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/formula/4.7.png"/></div>  
+<div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/formula/4.8.png"/></div>  
+训练主流程：  
+对于context(w)中任何一个词w^c，选取词w的正负样本  
+计算Loss对θ以及对w^c的偏导  
+更新w^c对应的词向量  
+
+#### 负采样算法  
+训练样本中的词，每个词计算一个长度(0-1)，所有词加起来长度是1  
+<div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/formula/4.9.png"/></div>  
+<div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/formula/4.10.png"/></div>  
+论文中α取得是3/4  
+<div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/formula/4.11.png"/></div>  
+然后我们再初始化一个非常大的数(论文中为10^8)，将0-1进行等分，每一段对应每个词的值域，然后我们随机0-M的一个数，便知道随机的哪一个词，如果随机到中心词就跳过  
+
