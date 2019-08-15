@@ -84,6 +84,7 @@ NN model的特征抽象能力强
 模仿word2vec训练word embedding将item embedding  
 但是，用户行为序列时序性缺失，用户行为序列中的item强度是无区分性的  
 算法主流程：从log中抽取用户行为序列；将行为序列当成语料训练word2vec得到item embedding；得到item sim关系用于推荐  
+
 ### CBOW(continuous bag of words)  
 <div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/formula/4.1.png"/></div>  
 已知上下文预测中间词  
@@ -96,5 +97,6 @@ X_w是上下文词向量加和，θ是投影层与输出的词为u时，他们�
 选取中心词w以及负采样出NEG(w)；  
 分别获得损失函数对于X_w与θ的梯度；  
 更新θ以及中心词对应的context(w)的每一个词的词向量。  
+
 ### Skip Gram  
 <div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/formula/4.3.png"/></div>  
