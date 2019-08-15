@@ -116,3 +116,14 @@ X_w是上下文词向量加和，θ是投影层与输出的词为u时，他们�
 <div align=center><img src="https://github.com/TripleHack/RecSys_Algorithm/blob/master/formula/4.11.png"/></div>  
 然后我们再初始化一个非常大的数(论文中为10^8)，将0-1进行等分，每一段对应每个词的值域，然后我们随机0-M的一个数，便知道随机的哪一个词，如果随机到中心词就跳过  
 
+## 5.Content Based  
+思路极简，可解释强  
+用户推荐的独立性强  
+问世较早，流行度高  
+  
+推荐扩展性差  
+需要积累一定量用户行为  
+  
+Item Profile: Topic Finding, Genre Classify  
+User Profile: Genre/Topic, Time Decay  
+Online Recommendation: Find top k Genre/Topic, Get the best n item from fixed Genre/Topic
