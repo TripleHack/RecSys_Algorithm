@@ -83,4 +83,18 @@ NN model的特征抽象能力强
 将用户行为序列转化成item组成的句子  
 模仿word2vec训练word embedding将item embedding  
 但是，用户行为序列时序性缺失，用户行为序列中的item强度是无区分性的  
-算法主流程：从log中抽取用户行为序列；将行为序列当成语料训练word2vec得到item embedding；得到item sim关系用于推荐
+算法主流程：从log中抽取用户行为序列；将行为序列当成语料训练word2vec得到item embedding；得到item sim关系用于推荐  
+### CBOW(continuous bag of words)  
+图4.1  
+已知上下文预测中间词  
+图4.2  
+X_w是上下文词向量加和，θ是投影层与输出的词为u时，他们之间的全连接  
+图4.4  
+图4.5  
+图4.6  
+训练主流程：
+选取中心词w以及负采样出NEG(w)
+分别获得损失函数对于X_w与θ的梯度  
+更新θ以及中心词对应的context(w)的每一个词的词向量  
+### Skip Gram  
+图4.3  
